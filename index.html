@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lush</title>
+    <style>
+      /* Reset and global styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        backgroundurl(images/Be.png)no-repeat center center fixed;
+        font-family: monospace;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        position: relative; /* Needed for the pseudo-element */
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("images/Be.png") no-repeat center center fixed;
+        background-size: cover;
+        opacity: 0.2; /* Reduce opacity of the background */
+        z-index: -1; /* Place behind all content */
+      }
+
+      /* Navigation Bar */
+      .navbar {
+        background-color: darkgreen;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        z-index: 5;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+
+      .navbar ul {
+        display: flex;
+        list-style: none;
+      }
+
+      /* Header Section */
+      .header {
+        text-align: center;
+        padding: 50px;
+        background:;
+      }
+
+      .header h1 {
+        margin-bottom: 20px;
+      }
+
+      /* Product Section */
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        background-color:;
+      }
+
+      .product-card {
+        background:;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+        display: block;
+      }
+
+      .product-card:hovers {
+        transform: translateY(-5px);
+      }
+      #image:hover {
+        width: 100%;
+        height: 100%;
+        transform: none;
+        z-index: 3;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 200px;
+        display: block;
+        object-fit: cover;
+        z-index: 2;
+      }
+
+      .product-card .info {
+        padding: 15px;
+        margin-top: auto;
+        z-index: 1;
+      }
+
+      .product-card .info h3 {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      .product-card .info p {
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      .product-card .info a {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: white;
+        background-color: #27ae60;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 0.9em;
+      }
+
+      .product-card .info a:hover {
+        background-color: #219150;
+      }
+
+      /* Review Section */
+      .reviews {
+        background:;
+        padding: 20px;
+      }
+
+      .reviews h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .review-card {
+        background: white;
+        border-radius: 8px;
+        margin: 10px 0;
+        padding: 15px;
+        border: 1px solid #ccc;
+      }
+
+      .review-card h4 {
+        margin-bottom: 5px;
+      }
+
+      .review-card p {
+        color: #555;
+      }
+      /* Contact Info Section */
+      .contact-info {
+        background:;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .contact-info h2 {
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .contact-info p {
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      .contact-info a {
+        color: #27ae60;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      /* Social Media Links */
+      .social-icons {
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        margin: 0 10px;
+        color: #333;
+        text-decoration: none;
+        font-size: 24px;
+        transition: color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: #27ae60;
+      }
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 10px;
+        background: #2c3e50;
+        color: white;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        .navbar ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .product-card img {
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <h1>Lush</h1>
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">contacts</a></li>
+      </ul>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header">
+      <h1>Welcome to Self-Watering Plants</h1>
+      <p>
+        Discover our innovative self-watering plants for a stress-free gardening
+        experience.
+      </p>
+    </div>
+
+    <!-- Product Section -->
+    <div id="products" class="products">
+      <div class="product-card">
+        <img id="image" src="images/PNG image.png" alt="Plant 1" />
+        <div class="info">
+          <h3>AURA-MINI</h3>
+          <p>Price:2̶5̶0̶ 210</p>
+          <a
+            href="https://wa.me/917356567117?text=I%20would%20like%20to%20order%20AURA%20MINI%20"
+            target="_blank"
+            >Order via WhatsApp</a
+          >
+        </div>
+      </div>
+      <div class="product-card">
+        <img id="image" src="images/PNG image 2.png" alt="Plant 2" />
+        <div class="info">
+          <h3>AURA</h3>
+          <p>Price:4̶5̶0̶ 360</p>
+          <a
+            href="https://wa.me/917356567117?text=I%20would%20like%20to%20to%20order%20AURA%20"
+            target="_blank"
+            >Order via WhatsApp</a
+          >
+        </div>
+      </div>
+      <div class="product-card">
+        <img id="image" src="images/PNG image 3.png" alt="Plant 3" />
+        <div class="info">
+          <h3>AURA-PLUS</h3>
+          <p>Price:5̶5̶0̶ 440</p>
+          <a
+            href="https://wa.me/917356567117?text=I%20would%20like%20to%20to%20order%20AURA%20PLUS%20"
+            target="_blank"
+            >Order via WhatsApp</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- R IS -->
+    <div id="reviews" class="reviews">
+      <h2>Customer Reviews</h2>
+      <div class="review-card">
+        <h4>gardening_doctor</h4>
+        <a
+          text-decoration="none"
+          href="https://www.instagram.com/reel/DEOvEhSSmfh/?igsh=MmV6cmlmajV6bHZ4"
+          >Product review on instagram</a
+        >
+      </div>
+      <div class="review-card">
+        <h4>urban_botanistt</h4>
+        <a
+          text-decoration="none"
+          href="https://www.instagram.com/reel/DEHyTS9SdSF/?igsh=MTNhank5ZHo4MjYwOQ=="
+          >Product review on instagram</a
+        >
+      </div>
+    </div>
+    <div id="contact" class="contact-info">
+      <h2>Contact Us</h2>
+      <p>
+        <strong>Address:</strong>Ninan,s Complex,mettupalayam
+        street,Palakkad-678001
+      </p>
+      <p>
+        <strong>Phone:</strong> <a href="tel:+917356567117">+917356567117</a>
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:lush@gmail.com">lush@gmail.com</a>
+      </p>
+
+      <!-- Social Media Links -->
+      <div class="social-icons">
+        <a
+          href="https://www.instagram.com/__lush_______?igsh=YnhjanV2cjg2ZTlj"
+          target="_blank"
+          >instagram</a
+        >
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 Self-Watering Plants@Lush. All rights reserved.</p>
+    </div>
+  </body>
+</html>
